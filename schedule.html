@@ -28,11 +28,12 @@
       <!-- Nav Menu -->
       <nav class="hidden md:flex text-lg" id="nav-menu">
         <ul class="flex space-x-3">
-          <li><a href="#" class="hover:underline">หน้าแรก</a></li>
-          <li><a href="#" class="hover:underline">ตารางเรียน</a></li>
-          <li><a href="#" class="hover:underline">ตารางการใช้ห้อง</a></li>
+          <li><a href="index.html" class="hover:underline">หน้าแรก</a></li>
+          <li><a href="schedule.html" class="hover:underline">ตารางเรียน</a></li>
+          <li><a href="room-schedule.html" class="hover:underline">ตารางการใช้ห้อง</a></li>
           <li><a href="#" class="hover:underline">ปฎิทินการศึกษา</a></li>
           <li><a href="login.html" class="hover:underline">เข้าสู่ระบบ</a></li>
+          <li><a href="professorlogin.html" class="hover:underline">เข้าสู่ระบบอาจารย์</a></li>
         </ul>
       </nav>
     </div>
@@ -40,11 +41,12 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
       <ul class="space-y-2">
-        <li><a href="#" class="block hover:underline">หน้าแรก</a></li>
-        <li><a href="#" class="block hover:underline">ตารางเรียน</a></li>
-        <li><a href="#" class="block hover:underline">ตารางการใช้ห้อง</a></li>
+        <li><a href="index.html" class="block hover:underline">หน้าแรก</a></li>
+        <li><a href="schedule.html" class="block hover:underline">ตารางเรียน</a></li>
+        <li><a href="room-schedule.html" class="block hover:underline">ตารางการใช้ห้อง</a></li>
         <li><a href="#" class="block hover:underline">ปฎิทินการศึกษา</a></li>
         <li><a href="login.html" class="block hover:underline">เข้าสู่ระบบ</a></li>
+        <li><a href="professorlogin.html" class="block hover:underline">เข้าสู่ระบบอาจารย์</a></li>
       </ul>
     </div>
   </header>
@@ -58,22 +60,160 @@
       mobileMenu.classList.toggle('hidden');
     });
   </script>
-  <!-- Hero Section -->
-  <!-- <section class="bg-green-100 py-16 text-center"> -->
-  <!-- <h2 class="text-4xl font-bold text-green-900">เรียนรู้ สร้างสรรค์ รับใช้สังคม</h2> -->
-  <!-- <p class="mt-4 text-lg text-green-800">ยินดีต้อนรับสู่มหาวิทยาลัยแม่โจ้</p> -->
-  <!-- <button class="mt-6 px-6 py-2 bg-green-700 text-white rounded-lg hover:bg-green-900"> -->
-  <!-- อ่านเพิ่มเติม -->
-  </button>
-  </section>
-
   <!-- Main Content -->
   <main>
-    <div class="max-w-7xl mx-auto px-4 items-center py-4 text-xl">
+    <div class="max-w-7xl mx-auto px-4 items-center py-4 text-l">
       <p>หลักสูตร วิทยาศาสตรบัณฑิต สาขาวิชาวิทยาการคอมพิวเตอร์</p>
       <p>อ. ที่ปรึกษา ผู้ช่วยศาสตราจารย์ภานุวัฒน์ เมฆะ</p>
     </div>
   </main>
+  <section class="py-10">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-xl font-bold text-center text-green-800 mb-6">ตารางเรียน</h2>
+
+      <table
+        align="center" class="table-fixed border-collapse border border-green-800 text-center text-[11px] sm:text-xs leading-tight">
+        <thead class="bg-green-800 text-white">
+          <tr>
+            <th class="border border-green-800 px-1 py-2 w-[14%]">วัน/เวลา</th>
+            <th class="border border-green-800 px-1 py-2">8:00-9:00</th>
+            <th class="border border-green-800 px-1 py-2">9:00-10:00</th>
+            <th class="border border-green-800 px-1 py-2">10:00-11:00</th>
+            <th class="border border-green-800 px-1 py-2">11:00-12:00</th>
+            <th class="border border-green-800 px-1 py-2">12:00-13:00</th>
+            <th class="border border-green-800 px-1 py-2">13:00-14:00</th>
+            <th class="border border-green-800 px-1 py-2">14:00-15:00</th>
+            <th class="border border-green-800 px-1 py-2">15:00-16:00</th>
+            <th class="border border-green-800 px-1 py-2">16:00-17:00</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white text-gray-800">
+          <!-- ตัวอย่างวันจันทร์ -->
+          <tr>
+            <td class="border border-green-800 px-1 py-6 font-medium">จันทร์</td>
+            <td class="border border-green-800 px-1 py-6"></td>
+            <td class="border border-green-800 px-1 py-6 bg-green-100" colspan="3">10301231
+              (3) 1, Lab คอม3-4 105</td>
+            <td class="border border-green-800 px-1 py-6"></td>
+            <td class="border border-green-800 px-1 py-6 bg-green-100" colspan="2">10301222
+              (3) 1, Lab คอม3-4
+              105</td>
+            <td class="border border-green-800 px-1 py-6"></td>
+            <td class="border border-green-800 px-1 py-6"></td>
+          </tr>
+          <!-- ตัวอย่างวันอังคาร -->
+          <tr>
+            <td class="border border-green-800 px-1 py-6 font-medium">อังคาร</td>
+            <td class="border border-green-800 px-1 py-6 bg-green-100" colspan="2">10301231
+              (3) 1, Lab คอม3-4 105</td>
+            <td class="border border-green-800 px-1 py-6 bg-green-100" colspan="2">10700313
+              (3) 2, 80-501
+              147</td>
+            <td class="border border-green-800 px-1 py-6"></td>
+            <td class="border border-green-800 px-1 py-6 bg-green-100" colspan="2"> 10301225
+(3) 1, Lab คอม3-4
+105</td>
+            <td class="border border-green-800 px-1 py-6 bg-green-100" colspan="2"> 10301211
+(3) 1, 3203
+141</td>
+          </tr>
+          <!-- ตัวอย่างวันพุธ -->
+          <tr>
+            <td class="border border-green-800 px-1 py-6 font-medium">พุธ</td>
+            <td class="border border-green-800 px-1 py-6"></td>
+            <td class="border border-green-800 px-1 py-6 bg-green-100" colspan="3"> 10301225
+              (3) 1, 3203 141</td>
+            <td class="border border-green-800 px-1 py-6"></td>
+            <td class="border border-green-800 px-1 py-6"></td>
+            <td class="border border-green-800 px-1 py-6"></td>
+            <td class="border border-green-800 px-1 py-6"></td>
+          </tr>
+          <!-- ตัวอย่างวันพฤหัส -->
+          <tr>
+            <td class="border border-green-800 px-1 py-6 font-medium">พฤหัส</td>
+            <td class="border border-green-800 px-1 py-6"></td>
+            <td class="border border-green-800 px-1 py-6 bg-green-100" colspan="3"> 10301222
+              (3) 1, Lab คอม3-4 105</td>
+            <td class="border border-green-800 px-1 py-6"></td>
+            <td class="border border-green-800 px-1 py-6 bg-green-100" colspan="2"> 10301223
+              (3) 1, Lab คอม3-4 105</td>
+            <td class="border border-green-800 px-1 py-6"></td>
+            <td class="border border-green-800 px-1 py-6"></td>
+          </tr>
+          <!-- ตัวอย่างวันศุกร์ -->
+          <tr>
+            <td class="border border-green-800 px-1 py-6 font-medium">ศุกร์</td>
+            <td class="border border-green-800 px-1 py-6"></td>
+            <td class="border border-green-800 px-1 py-6 bg-green-100"> 10301211
+              (3) 1, 3203 141</td>
+            <td class="border border-green-800 px-1 py-6 bg-green-100" colspan="2"> 10700313
+              (3) 2, 80-501 147</td>
+            <td class="border border-green-800 px-1 py-6"></td>
+            <td class="border border-green-800 px-1 py-6 bg-green-100" colspan="3"> 10301223
+              (3) 1, Lab คอม3-4 105</td>
+            <td class="border border-green-800 px-1 py-6"></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="text-xl font-bold text-center text-green-800 mb-6" align="center">ตารางสอบกลางภาค</h2>
+    <table align="center" class=" table-fixed border-collapse border border-green-800 text-center text-[11px] sm:text-xs leading-tight">
+        <thead>
+            <tr class="border border-green-800 px-1 py-6">
+                <th>รหัสวิชา</th>
+                <th>ชื่อรายวิชา</th>
+                <th>กลุ่ม</th>
+                <th>สอบกลางภาค</th>
+                <th>สอบปลายภาค</th>
+            </tr>
+        </thead>
+        <tbody class="border border-green-800 px-1 py-6">
+            <tr >
+                <td>10301211</td>
+                <td>คณิตศาสตร์สำหรับวิทยาการคอมพิวเตอร์<br>Mathematics for Computer Science</td>
+                <td>1</td>
+                <td>(C) 22 ส.ค. 2568<br>เวลา 11:00-01:00 น</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>10301222</td>
+                <td>โครงสร้างข้อมูลและอัลกอริทึม<br>Data Structure and Algorithm</td>
+                <td>1</td>
+                <td>(C) 18 ส.ค. 2568<br>เวลา 12:00-15:00 น</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>10301223</td>
+                <td>ฐานข้อมูลโครงสร้างเชิงสัมพันธ์<br>Structure Relational Database</td>
+                <td>1</td>
+                <td>(C) 20 ส.ค. 2568<br>เวลา 15:30-18:30 น</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>10301225</td>
+                <td>วิศวกรรมซอฟต์แวร์<br>Software Engineering</td>
+                <td>1</td>
+                <td>N/A</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>10301231</td>
+                <td>เว็บเทคโนโลยี<br>Web Technology</td>
+                <td>1</td>
+                <td>N/A</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>10700313</td>
+                <td>ภาษาอังกฤษเชิงวิทยาศาสตร์และนวัตกรรม<br>English for Science and Innovation</td>
+                <td>2</td>
+                <td>N/A</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="bg-green-800 text-white py-6 mt-auto">
