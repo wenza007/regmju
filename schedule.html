@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>มหาวิทยาลัยแม่โจ้</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <link rel="stylesheet" href="css/style.css" /> -->
+</head>
+
+<body class="bg-white text-gray-800 font-sans flex flex-col min-h-screen">
+  <!-- Navbar -->
+  <header class="bg-green-800 text-white">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
+      <div class="flex items-center space-x-3">
+        <img src="img/mju_logo.png" alt="โลโก้แม่โจ้" style="height: 100px; width: auto;" />
+        <h1 class="text-4xl font-bold">มหาวิทยาลัยแม่โจ้</h1>
+      </div>
+
+      <!-- Hamburger Button -->
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Nav Menu -->
+      <nav class="hidden md:flex text-lg" id="nav-menu">
+        <ul class="flex space-x-3">
+          <li><a href="#" class="hover:underline">หน้าแรก</a></li>
+          <li><a href="#" class="hover:underline">ตารางเรียน</a></li>
+          <li><a href="#" class="hover:underline">ตารางการใช้ห้อง</a></li>
+          <li><a href="#" class="hover:underline">ปฎิทินการศึกษา</a></li>
+          <li><a href="login.html" class="hover:underline">เข้าสู่ระบบ</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+      <ul class="space-y-2">
+        <li><a href="#" class="block hover:underline">หน้าแรก</a></li>
+        <li><a href="#" class="block hover:underline">ตารางเรียน</a></li>
+        <li><a href="#" class="block hover:underline">ตารางการใช้ห้อง</a></li>
+        <li><a href="#" class="block hover:underline">ปฎิทินการศึกษา</a></li>
+        <li><a href="login.html" class="block hover:underline">เข้าสู่ระบบ</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- JavaScript Toggle -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+  <!-- Hero Section -->
+  <!-- <section class="bg-green-100 py-16 text-center"> -->
+  <!-- <h2 class="text-4xl font-bold text-green-900">เรียนรู้ สร้างสรรค์ รับใช้สังคม</h2> -->
+  <!-- <p class="mt-4 text-lg text-green-800">ยินดีต้อนรับสู่มหาวิทยาลัยแม่โจ้</p> -->
+  <!-- <button class="mt-6 px-6 py-2 bg-green-700 text-white rounded-lg hover:bg-green-900"> -->
+  <!-- อ่านเพิ่มเติม -->
+  </button>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <div class="max-w-7xl mx-auto px-4 items-center py-4 text-xl">
+      <p>หลักสูตร วิทยาศาสตรบัณฑิต สาขาวิชาวิทยาการคอมพิวเตอร์</p>
+      <p>อ. ที่ปรึกษา ผู้ช่วยศาสตราจารย์ภานุวัฒน์ เมฆะ</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-green-800 text-white py-6 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p>© 2025 มหาวิทยาลัยแม่โจ้. สงวนลิขสิทธิ์.</p>
+      <p class="text-sm mt-2">โทรศัพท์: 053-873-000 | ที่อยู่: 63 หมู่ 4 ต.หนองหาร อ.สันทราย จ.เชียงใหม่ 50290</p>
+    </div>
+  </footer>
+</body>

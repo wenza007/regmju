@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>มหาวิทยาลัยแม่โจ้</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-gray-800 font-sans flex flex-col min-h-screen">
+  <!-- Navbar -->
+  <header class="bg-green-800 text-white">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
+      <div class="flex items-center space-x-3">
+        <img src="img/mju_logo.png" alt="โลโก้แม่โจ้" style="height: 100px; width: auto;" />
+        <h1 class="text-4xl font-bold">มหาวิทยาลัยแม่โจ้</h1>
+      </div>
+
+      <!-- Hamburger Button -->
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Nav Menu -->
+      <nav class="hidden md:flex text-lg" id="nav-menu">
+        <ul class="flex space-x-3">
+          <li><a href="index.html" class="hover:underline">หน้าแรก</a></li>
+          <li><a href="#" class="hover:underline">ตารางเรียน</a></li>
+          <li><a href="room-schedule.html" class="hover:underline">ตารางการใช้ห้อง</a></li>
+          <li><a href="#" class="hover:underline">ปฎิทินการศึกษา</a></li>
+          <li><a href="login.html" class="hover:underline">เข้าสู่ระบบ</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+      <ul class="space-y-2">
+        <li><a href="index.html" class="block hover:underline">หน้าแรก</a></li>
+        <li><a href="#" class="block hover:underline">ตารางเรียน</a></li>
+        <li><a href="room-schedule.html" class="block hover:underline">ตารางการใช้ห้อง</a></li>
+        <li><a href="#" class="block hover:underline">ปฎิทินการศึกษา</a></li>
+        <li><a href="login.html" class="block hover:underline">เข้าสู่ระบบ</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-4 py-12 flex-1">
+    <h2 class="text-3xl font-bold text-green-800 mb-6 text-center leading-snug">ตารางการใช้ห้อง</h2>
+    <div class="overflow-x-auto">
+      <table class="min-w-full border border-gray-300">
+        <thead class="bg-green-100">
+          <tr>
+            <th class="py-2 px-4 border-b border-gray-300 text-left">รหัส</th>
+            <th class="py-2 px-4 border-b border-gray-300 text-left">ชื่ออาคาร/หน่วยงาน</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white">
+          <!-- ข้อมูลเชียงใหม่ -->
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#000">000</a></td><td class="py-2 px-4 border-b">ประกาศภายหลัง</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#101">101</a></td><td class="py-2 px-4 border-b">อาคารพัฒนาวิสัยทัศน์</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#102">102</a></td><td class="py-2 px-4 border-b">ประเสริฐ ณ นคร</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#103">103</a></td><td class="py-2 px-4 border-b">สรีดภานนท์</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#104">104</a></td><td class="py-2 px-4 border-b">คณะวิศวกรรมและอุตสาหกรรมเกษตร</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#105">105</a></td><td class="py-2 px-4 border-b">คณะวิทยาศาสตร์</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#106">106</a></td><td class="py-2 px-4 border-b">คณะเทคโนโลยีการประมงและทรัพยากรทางน้ำ</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#107">107</a></td><td class="py-2 px-4 border-b">คณะบริหารธุรกิจ</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#108">108</a></td><td class="py-2 px-4 border-b">ภาควิชาทรัพยากรดินและสิ่งแวดล้อม</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#109">109</a></td><td class="py-2 px-4 border-b">อาคารเทคโนโลยีภูมิทัศน์</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#110">110</a></td><td class="py-2 px-4 border-b">ศูนย์กีฬาเฉลิมพระเกียรติ (โซน B)</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#111">111</a></td><td class="py-2 px-4 border-b">ศูนย์ก้องวังไม้และไม้ดอกไม้ประดับ</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#112">112</a></td><td class="py-2 px-4 border-b">คณะวิทยาศาสตร์และเทคโนโลยี</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#113">113</a></td><td class="py-2 px-4 border-b">อาคารวิทย์มุญแปง</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#114">114</a></td><td class="py-2 px-4 border-b">อาคารเมล็ดพันธุ์</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#115">115</a></td><td class="py-2 px-4 border-b">อาคารไม้ผล</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#116">116</a></td><td class="py-2 px-4 border-b">อาคารพืชผัก</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#117">117</a></td><td class="py-2 px-4 border-b">อาคารเนื้อเยื่อ</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#118">118</a></td><td class="py-2 px-4 border-b">ภาควิชา</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#119">119</a></td><td class="py-2 px-4 border-b">TBA</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#120">120</a></td><td class="py-2 px-4 border-b">ภาคพืชไร่</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#121">121</a></td><td class="py-2 px-4 border-b">อาคารเทคโนโลยีชีวภาพ</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#122">122</a></td><td class="py-2 px-4 border-b">อาคาร 77</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#123">123</a></td><td class="py-2 px-4 border-b">ภาควิชาพืชสวน</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#124">124</a></td><td class="py-2 px-4 border-b">อาคารสุวรรณวาจกกิสิกิจ</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#125">125</a></td><td class="py-2 px-4 border-b">อาคารแม่โจ้ 70 ปี : สร้างปัญญาเพื่อแผ่นดิน</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#126">126</a></td><td class="py-2 px-4 border-b">อาคารปฏิบัติการรวมทางพืช</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#127">127</a></td><td class="py-2 px-4 border-b">อาคารหม่อนไหม</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#128">128</a></td><td class="py-2 px-4 border-b">ศูนย์วิจัยควบคุมศัตรูพืชโดยชีวินทรีย์ฯ</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#129">129</a></td><td class="py-2 px-4 border-b">อาคารเฉลิมพระเกียรติสมเด็จพระเทพฯ</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#130">130</a></td><td class="py-2 px-4 border-b">อาคารไม้ผล 2</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#140">140</a></td><td class="py-2 px-4 border-b">อาคารเศรษฐศาสตร์</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#141">141</a></td><td class="py-2 px-4 border-b">อาคารจุฬาภรณ์</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#142">142</a></td><td class="py-2 px-4 border-b">อาคารเทพ พงษ์พานิช</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#143">143</a></td><td class="py-2 px-4 border-b">อาคาร 75 ปี (คณะสารสนเทศแลการสื่อสาร)</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#144">144</a></td><td class="py-2 px-4 border-b">สระว่ายน้ำอุบุลรัตนราชกัญญา</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#145">145</a></td><td class="py-2 px-4 border-b">วิทยาลัยพลังงานทดแทน</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#146">146</a></td><td class="py-2 px-4 border-b">อาคารเทอดกสิกร</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#147">147</a></td><td class="py-2 px-4 border-b">อาคารเรียนรวม 80 ปี</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#148">148</a></td><td class="py-2 px-4 border-b">อาคารเรียนรวมคณะสถาปัตยกรรมศาสตร์และการออกแบบสิ่งแวดล้อม</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#149">149</a></td><td class="py-2 px-4 border-b">อาคารศูนย์ภาษา</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#150">150</a></td><td class="py-2 px-4 border-b">อาคารพยาบาลศาสตร์</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#151">151</a></td><td class="py-2 px-4 border-b">ศูนย์เรียนรู้เทคโนโลยีการควบคุมศัตรูพืชโดยชีววิธี (ฟาร์มมหาวิทยาลัย)</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#152">152</a></td><td class="py-2 px-4 border-b">การเรียนการสอนแบบออนไลน์</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#153">153</a></td><td class="py-2 px-4 border-b">อาคารเรียนรวมและปฏิบัติการ คณะสัตวแพทยศาสตร์</td></tr>
+          <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#154">154</a></td><td class="py-2 px-4 border-b">อาคารปฏิบัติการโรงพยาบาลสัตว์</td></tr>
+          <!-- วิทยาเขต แพร่ -->
+        <tr class="bg-gray-300 font-semibold">
+          <td colspan="2" class="py-2 px-4">วิทยาเขต แพร่</td>
+        </tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#801">801</a></td><td class="py-2 px-4 border-b">อาคารพลังแม่โจ้สามัคคี</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#802">802</a></td><td class="py-2 px-4 border-b">อาคารนำชัย หมู่ผล</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#803">803</a></td><td class="py-2 px-4 border-b">อาคารปฏิบัติการทางวิทยาศาสตร์และเทคโนโลยีอุตสาหกรรมเกษตร</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#804">804</a></td><td class="py-2 px-4 border-b">อาคารบำรุงและอุตสาหกรรมฯ</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#805">805</a></td><td class="py-2 px-4 border-b">ฟาร์มเทคโนโลยีการผลิตสัตว์</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#806">806</a></td><td class="py-2 px-4 border-b">ฟาร์มเทคโนโลยีการผลิตพืช</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#807">807</a></td><td class="py-2 px-4 border-b">ฟาร์มเกษตรป่าไม้</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#808">808</a></td><td class="py-2 px-4 border-b">ศูนย์ประสานงาน</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#809">809</a></td><td class="py-2 px-4 border-b">ฟาร์มสัตว์ปีก</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#810">810</a></td><td class="py-2 px-4 border-b">ฟาร์มสุกร</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#811">811</a></td><td class="py-2 px-4 border-b">อาคารเทพ พงษ์พานิช</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#812">812</a></td><td class="py-2 px-4 border-b">อาคารเกษตรป่าไม้</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#813">813</a></td><td class="py-2 px-4 border-b">อาคารเทคโนโลยีการผลิตพืช</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#814">814</a></td><td class="py-2 px-4 border-b">อาคารเทคโนโลยีการผลิตสัตว์</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#815">815</a></td><td class="py-2 px-4 border-b">อาคารศาสตร์พระราชา</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#816">816</a></td><td class="py-2 px-4 border-b">Shop เทคโนโลยีอุตสาหกรรมป่าไม้</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">TBA</td><td class="py-2 px-4 border-b">TBA</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">สนามกีฬา</a></td><td class="py-2 px-4 border-b">สนามกีฬา</td></tr>
+        <tr class="bg-gray-300 font-semibold">
+          <td colspan="2" class="py-2 px-4">วิทยาเขต ชุมพร</td>
+        </tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">701</td><td class="py-2 px-4 border-b">อาคารบุญรอด ศุภอุดมฤกษ์</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">702</td><td class="py-2 px-4 border-b">อาคารแม่โจ้สามัคคี</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">703</td><td class="py-2 px-4 border-b">โรงน้ำจืด</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">704</td><td class="py-2 px-4 border-b">โรงน้ำเค็ม</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">705</td><td class="py-2 px-4 border-b">แปลงดอกหน้าวัว</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">706</td><td class="py-2 px-4 border-b">สนามกีฬา</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">707</td><td class="py-2 px-4 border-b">นอกสถานที่</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">708</td><td class="py-2 px-4 border-b">ฟาร์มเทคโนโลยีการผลิตพืช</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">709</td><td class="py-2 px-4 border-b">ฟาร์มการประมง(การเพาะเลี้ยงสัตว์น้ำ)</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">710</td><td class="py-2 px-4 border-b">แปลงพืชไร่</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">711</td><td class="py-2 px-4 border-b">แปลงไม้ผล</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">712</td><td class="py-2 px-4 border-b">แปลงไม้ดอก</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">713</td><td class="py-2 px-4 border-b">อาคาร Cowboy</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">714</td><td class="py-2 px-4 border-b">โครงการศูนย์การศึกษาสัญจร</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">715</td><td class="py-2 px-4 border-b">อาคาร Cowboy</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">716</td><td class="py-2 px-4 border-b">อาคารแม่โจ้ 80 ปี</td></tr>
+        <tr><td class="py-2 px-4 border-b text-blue-600 underline"><a href="#">717</a></td><td class="py-2 px-4 border-b">	อาคารปฏิบัติงานด้านวิทยาศาสตร์และเทคโนโลยี</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-green-800 text-white py-6 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p>© 2025 มหาวิทยาลัยแม่โจ้. สงวนลิขสิทธิ์.</p>
+      <p class="text-sm mt-2">โทรศัพท์: 053-873-000 | ที่อยู่: 63 หมู่ 4 ต.หนองหาร อ.สันทราย จ.เชียงใหม่ 50290</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript Toggle -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
