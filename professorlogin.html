@@ -15,15 +15,19 @@
 
       <form id="login-form" class="space-y-4">
         <div>
-          <label for="student-id" class="block text-sm font-medium text-gray-700">username</label>
-          <input type="text" id="student-id" required
+          <label for="username" class="block text-sm font-medium text-gray-700">ชื่อผู้ใช้</label>
+          <input type="text" id="username" required
             class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-green-500 focus:outline-none" />
         </div>
 
         <div>
-          <label for="password" class="block text-sm font-medium text-gray-700">password</label>
+          <label for="password" class="block text-sm font-medium text-gray-700">รหัสผ่าน</label>
           <input type="password" id="password" required
             class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-green-500 focus:outline-none" />
+        </div>
+
+        <div id="error-message" class="text-sm text-red-600 text-center hidden">
+          ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง
         </div>
 
         <button type="submit"
@@ -40,7 +44,17 @@
     <script>
       document.getElementById("login-form").addEventListener("submit", function (e) {
         e.preventDefault();
-        window.location.href = "index.html";
+
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const errorMessage = document.getElementById("error-message");
+
+        // เช็คชื่อผู้ใช้และรหัสผ่าน
+        if (username === "teacher01" && password === "123456") {
+          window.location.href = "dashboard.html"; // ไปหน้าหลังล็อกอิน
+        } else {
+          errorMessage.classList.remove("hidden");
+        }
       });
     </script>
   </body>

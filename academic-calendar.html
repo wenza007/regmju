@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>มหาวิทยาลัยแม่โจ้</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    label {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background-color: #eafffc;
+      color: #2c3e50;
+      width: 100%;
+      max-width: 400px;
+      transition: background-color 0.3s ease;
+    }
+
+    select:hover {
+      background-color: #e0f0ff;
+    }
+
+    .red {
+      color: #e74c3c;
+    }
+
+    .blue {
+      color: #3498db;
+    }
+
+    button {
+      padding: 6px 10px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 font-sans flex flex-col min-h-screen">
+  <!-- Navbar -->
+  <header class="bg-green-800 text-white">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
+      <div class="flex items-center space-x-3">
+        <img src="img/mju_logo.png" alt="โลโก้แม่โจ้" style="height: 100px; width: auto;" />
+        <h1 class="text-4xl font-bold">มหาวิทยาลัยแม่โจ้</h1>
+      </div>
+
+      <!-- Hamburger Button -->
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Nav Menu -->
+      <nav class="hidden md:flex text-lg" id="nav-menu">
+        <ul class="flex space-x-3">
+          <li><a href="index.html" class="hover:underline">หน้าแรก</a></li>
+          <li><a href="schedule.html" class="hover:underline">ตารางเรียน</a></li>
+          <li><a href="room-schedule.html" class="hover:underline">ตารางการใช้ห้อง</a></li>
+          <li><a href="Academic Calendar.html" class="hover:underline">ปฎิทินการศึกษา</a></li>
+          <li><a href="login.html" class="hover:underline">เข้าสู่ระบบ</a></li>
+          <li><a href="professorlogin.html" class="hover:underline">เข้าสู่ระบบอาจารย์</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+      <ul class="space-y-2">
+        <li><a href="index.html" class="block hover:underline">หน้าแรก</a></li>
+        <li><a href="schedule.html" class="block hover:underline">ตารางเรียน</a></li>
+        <li><a href="room-schedule.html" class="block hover:underline">ตารางการใช้ห้อง</a></li>
+        <li><a href="Academic Calendar.html" class="block hover:underline">ปฎิทินการศึกษา</a></li>
+        <li><a href="login.html" class="block hover:underline">เข้าสู่ระบบ</a></li>
+        <li><a href="professorlogin.html" class="block hover:underline">เข้าสู่ระบบอาจารย์</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-4 py-12 flex-1">
+    <h2 class="text-3xl font-bold text-green-800 mb-6 text-center leading-snug">ปฎิทินการศึกษา</h2>
+    
+
+    <!-- Dropdowns -->
+    <div class="space-y-4 mb-8">
+      <div>
+        <label for="faculty" class="block mb-2">ชุดปฎิทิน:</label>
+        <select id="faculty" name="faculty">
+          <option value="1000">1000: วิทยาลัยบริหารศาสตร์</option>
+          <option value="1001">1001: ปริญญาตรี ปกติ </option>
+          <option value="1002">1002: ปริญญาตรี สมทบ </option>
+          <option value="1003">1003: ปริญญาตรี ภาคปกติ วิทยาเขตฯ </option>
+          <option value="1006">1006: นักศึกษาทดลองเรียนมัธยมเทคโนศึกษา </option>
+          <option value="2001">2001: บัณฑิตศึกษา ปกติ  </option>
+          <option value="2002">2002: บัณฑิตศึกษา สมทบ </option>
+          <option value="3001">3001: ปริญญาเอก ปกติ </option>
+          <option value="3002">3002: ปริญญาเอก สมทบ </option>
+          <option value="7001">7001: แม่โจ้ - ชุมพร  </option>
+          <option value="8001">8001: แม่โจ้ - แพร่  </option>
+          <option value="9999">9999: TEST </option>
+        </select>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <label for="academicYear">ปีการศึกษา:</label>
+        <select id="academicYear" onchange="updateDisplay()">
+          <option value="2566">2566</option>
+          <option value="2567">2567</option>
+          <option value="2568" selected>2568</option>
+          <option value="2569">2569</option>
+        </select>
+        <span>/</span>
+        <button onclick="setSemester(1)">1</button>
+        <button onclick="setSemester(2)">2</button>
+        <button onclick="setSemester(3)">3</button>
+      </div>
+
+      <h2 id="outputText" class="mt-4 text-lg font-semibold">
+        ปีการศึกษา <span class="red">2568</span> / <span class="blue">1</span>
+      </h2>
+    </div>
+ 
+  </main>
+  <script>
+    let selectedSemester = 1;
+
+    function updateDisplay() {
+      const year = document.getElementById("academicYear").value;
+      document.getElementById("outputText").innerHTML =
+        `ปีการศึกษา <span class="red">${year}</span> / <span class="blue">${selectedSemester}</span>`;
+    }
+
+    function setSemester(num) {
+      selectedSemester = num;
+      updateDisplay();
+    }
+
+    // เปิด/ปิดเมนูมือถือ
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      const menu = document.getElementById("mobile-menu");
+      menu.classList.toggle("hidden");
+    });
+
+    window.onload = updateDisplay;
+  </script>
+<table style="border-collapse: collapse; width: 60%; font-family: 'Segoe UI', sans-serif; margin: 20px auto;">
+  <thead style="background-color: #3498db; color: white;">
+    <tr>
+      <th style="padding: 10px; border: 1px solid #ccc;">รายการ</th>
+      <th style="padding: 10px; border: 1px solid #ccc;">วันเริ่มต้น</th>
+      <th style="padding: 10px; border: 1px solid #ccc;">วันสุดท้าย</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">ลงทะเบียนปกติ (on-line)</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">17 มิ.ย. 2568 - 00:01 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">20 มิ.ย. 2568 - 23:59 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">ชั้นปี 1 (ตามรหัสปีเข้า)</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">18 มิ.ย. 2568 - 00:01 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">18 มิ.ย. 2568 - 23:59 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">ชั้นปี 2 (ตามรหัสปีเข้า)</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">19 มิ.ย. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">19 มิ.ย. 2568 - 23:59 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">ชั้นปี 3 (ตามรหัสปีเข้า)</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">20 มิ.ย. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">20 มิ.ย. 2568 - 23:59 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">ชั้นปี 4 (ตามรหัสปีเข้า)</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">20 มิ.ย. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">20 มิ.ย. 2568 - 23:59 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">วันเปิดภาคการศึกษา</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">23 มิ.ย. 2568 - 8:00 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">23 มิ.ย. 2568 - 8:00 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">ลงทะเบียนเพิ่ม/ลด/เปลี่ยนกลุ่ม ( on-line )</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">23 มิ.ย. 2568 - 8:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">25 มิ.ย. 2568 - 23:59 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">ช่วงวันทำการเพิ่มรายวิชา</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">23 มิ.ย. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">25 มิ.ย. 2568 - 23:59 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">ช่วงวันทำการลดรายวิชา</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">23 มิ.ย. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">25 มิ.ย. 2568 - 23:59 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">ช่วงวันทำการเปลี่ยนกลุ่มรายวิชา</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">23 มิ.ย. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">25 มิ.ย. 2568 - 23:59 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">ช่วงลดรายวิชาโดยได้รับค่าหน่วยกิตคืนเต็ม</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">23 มิ.ย. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">25 มิ.ย. 2568 - 23:59 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">ลงทะเบียนล่าช้า</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">23 มิ.ย. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">25 มิ.ย. 2568 - 23:59 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">ช่วงการขอเทียบโอนหน่วยกิตนักศึกษาใหม่</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">17 มิ.ย. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">25 มิ.ย. 2568 - 16:30 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">งวดชำระเงินตามปกติ</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">30 มิ.ย. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">6 ก.ค. 2568 - 20:00 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">ชำระเงินที่เคาน์เตอร์ธนาคารกรุงไทยทุกสาขาทั่วประเทศ</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">30 มิ.ย. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">6 ก.ค. 2568 - 20:00 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">ช่วงพิมพ์ใบแจ้งหนี้ผ่าน WEB</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">30 มิ.ย. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">6 ก.ค. 2568 - 20:00 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;"> วันแจ้งคาดว่าจะสำเร็จการศึกษาผ่านระบบออนไลน์</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">14 ก.ค. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">14 ต.ค. 2568 - 16:30 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">	ช่วงของการรักษาสภาพนักศึกษา/ลาพักการศึกษา</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">23 มิ.ย. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">23 ก.ค. 2568 - 16:30 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">วันสุดท้ายของการขอแก้ไขผลการศึกษา I</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">23 ก.ค. 2568 - 16:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">23 ก.ค. 2568 - 16:30 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">ช่วงวันสอบกลางภาค</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">18 ส.ค. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">24 ส.ค. 2568 - 16:30 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">ช่วงวันทำการถอนรายวิชา ( ติด W )</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">7 ก.ค. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">9 ก.ย. 2568 - 16:00 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">วันสุดท้ายของการเรียนการสอน</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">12 ต.ค. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">12 ต.ค. 2568 - 16:30 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">ช่วงวันสอบปลายภาค</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">14 ต.ค. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">27 ต.ค. 2568 - 16:30 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">วันปิดภาคการศึกษา</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">28 ต.ค. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">28 ต.ค. 2568 - 16:30 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">วันสุดท้ายของการส่งผลการศึกษา</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">6 พ.ย. 2568 - 08:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">6 พ.ย. 2568 - 16:30 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">วันประกาศผลการศึกษา</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">7 พ.ย. 2568 - 16:30 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">7 พ.ย. 2568 - 23:30 น.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ccc;">วันไหว้ครู</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">24 ก.ค. 2568 - 08:00 น.</td>
+      <td style="padding: 8px; border: 1px solid #ccc;">24 ก.ค. 2568 - 16:30 น.</td>
+    </tr>
+  </tbody>
+</table>
+  <!-- Footer -->
+  <footer class="bg-green-800 text-white py-6 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p>© 2025 มหาวิทยาลัยแม่โจ้. สงวนลิขสิทธิ์.</p>
+      <p class="text-sm mt-2">โทรศัพท์: 053-873-000 | ที่อยู่: 63 หมู่ 4 ต.หนองหาร อ.สันทราย จ.เชียงใหม่ 50290</p>
+    </div>
+  </footer>
+</body>
+</html>
